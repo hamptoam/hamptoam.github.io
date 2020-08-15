@@ -3,30 +3,40 @@ import React from "react";
 import { Grid, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import Navbar from './nav';
+//import styled from styled-components;
+//import Navbar from './nav';
 
 const styles = ({
     root: {
-
+        flexGrow: 1,
+        buffer: '50px',
+        margin: 'auto',
+    },
+    grid: {
+        padding: '50px',
+        width: '100%',
+        margin: '0px',
+       
     },
     card: {
-        padding: '25px',
-        buffer: '15px',
-        display: 'flex',
-        flexGrow: 1,
-        position: 'fixed-center',
-        top: 0,
-        bottom: 0,
-        width: '300px',
-        height: '300px',
+    width: '680px',
+    height: '480px',
+    backgroundColor: 'grey',
+    
+    },
+    bubble: {
+      justify: 'center',
+        width: '250px',
+        height: '250px',
         borderRadius: '50%',
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
         border: '1px solid white',
+        margin: '0px',
     },
     media: {
         borderRadius: '50%',
         backgroundImage: ("../images/temppicture.jpg"),
-        height: 300,
+        height: 250,
     },
 });
 
@@ -34,9 +44,10 @@ function Home(props) {
 
     const { classes } = props;
     return (
-        <Grid container justify="center" spacing={2}>
-            <Grid item>
-                <Card className={classes.card}>
+   
+        <Grid container className={classes.grid} justify={'space-around'}>
+            <Grid item spacing={4}>
+                <Card className={classes.bubble}>
                     <CardActionArea>
                     <CardMedia className={classes.media}
                             image={require('../images/temppicture.jpg')}
@@ -44,13 +55,13 @@ function Home(props) {
                     </CardActionArea>
                 </Card>
             </Grid>
-            <Grid>
-                <Card>
+            <Grid item spacing={6}>
+                <Card className={classes.card}>
 
                 </Card>
             </Grid>
         </Grid>
-
+ 
     )
 };
 
