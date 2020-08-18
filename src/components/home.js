@@ -3,40 +3,39 @@ import React from "react";
 import { Grid, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-//import styled from styled-components;
-//import Navbar from './nav';
 
 const styles = ({
     root: {
         flexGrow: 1,
         buffer: '50px',
         margin: 'auto',
+        border: '2px solid white',
     },
     grid: {
-        padding: '50px',
+        padding: '40px',
         width: '100%',
-        margin: '0px',
-       
+        margin: 'auto',
     },
     card: {
-    width: '680px',
-    height: '480px',
-    backgroundColor: 'grey',
-    
+        width: '1200px',
+        height: '600px',
+        backgroundColor: 'black',
+        margin: 'auto',
+        opacity: '40%',
+
+        borderRadius: '25px',
     },
     bubble: {
-      justify: 'center',
         width: '250px',
         height: '250px',
         borderRadius: '50%',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        border: '1px solid white',
-        margin: '0px',
+        border: '5px solid white',
+        margin: 'auto',
     },
     media: {
         borderRadius: '50%',
         backgroundImage: ("../images/temppicture.jpg"),
-        height: 250,
+        height: '250px',
     },
 });
 
@@ -44,10 +43,10 @@ function Home(props) {
 
     const { classes } = props;
     return (
-   
+   <div style={{width: '100%', margin: 'auto'}}>
         <Grid container className={classes.grid} justify={'space-around'}>
-            <Grid item spacing={4}>
-                <Card className={classes.bubble}>
+            <Grid item>
+                <Card className={classes.bubble} margin={'auto'}>
                     <CardActionArea>
                     <CardMedia className={classes.media}
                             image={require('../images/temppicture.jpg')}
@@ -55,13 +54,12 @@ function Home(props) {
                     </CardActionArea>
                 </Card>
             </Grid>
-            <Grid item spacing={6}>
+            <Grid item margin={'auto'}>
                 <Card className={classes.card}>
-
                 </Card>
             </Grid>
         </Grid>
- 
+        </div>
     )
 };
 

@@ -20,16 +20,14 @@ const styles = ({
         borderRadius: '5px',
         height: '75px',
         padding: '15px',
-        justifyContent: 'left',
     },
     Button: {
         padding: '10px', 
         borderRadius: '50%',
-        background: 'white',
+        background: 'grey',
        border: '3px solid',  
         height: 15,
         width: 15,
-        padding: '10px',
         margin: '15px',
     },   
 });
