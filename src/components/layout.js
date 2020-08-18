@@ -9,12 +9,14 @@ import Main from './main.js';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
+      //marginLeft: theme.spacing()
     },
   }));
 
 
-  export default function Layout() {
+export default function Layout() {
       const classes = useStyles();
 
       return (

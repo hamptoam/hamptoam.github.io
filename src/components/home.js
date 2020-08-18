@@ -22,7 +22,7 @@ const styles = ({
         backgroundColor: 'black',
         margin: 'auto',
         opacity: '40%',
-
+        border: '5px solid white',
         borderRadius: '25px',
     },
     bubble: {
