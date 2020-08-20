@@ -1,61 +1,70 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Toolbar, Grid, Link } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Button, Toolbar, Grid, Link, Typography } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 //import { shadows } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
-    toolbar: {
+    root: {
+    width: '100%',
+    maxWidth: '500',
+    },
+    appbar: {
        // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
         justifyContent: 'flex-end',
         display: 'flex',
         backgroundColor: 'black',
-        opacity: "40%",
-        height: '75px',
-        padding: '15px',
-        border: '5px solid white', 
-        //borderRadius: '10%',
-    },
-    button: {
-        //padding: '10px', 
-        borderRadius: '15%',
-        background: 'grey',
-        border: '3px solid white',  
-        height: '40px',
-        width: 15,
-        margin: '15px',
-    },   
+        opacity: "50%",
+    }, 
 }));
 
-export default function Navbar(props) {
+export default function Header(props) {
 
+    const WhiteTypography = withStyles({
+        root: {
+          color: "#FFFFFF"
+        }}
+        )(Typography);
+        
     const classes  = useStyles();
     const {sections, title} = props;
 
     return (
-        <Toolbar className={classes.toolbar}>
-            <Grid item size="small">
+        <AppBar position="fixed" className={classes.appbar}>
+        <Toolbar>
+            <Grid item xs={12}>
                     <Button className={classes.button} href="./home">
+                        <WhiteTypography variant="h5">
                         Home
+                        </WhiteTypography>
                     </Button>
                     <Button className={classes.button} href="./aboutme">
+                    <WhiteTypography variant="h5">
                         About Me
+                    </WhiteTypography>
                     </Button>
-                    <Button className={classes.button} href="./projects" >
+                    <Button className={classes.button} href="./projects">
+                    <WhiteTypography variant="h5">
                         Projects
+                    </WhiteTypography>
                     </Button>
                     <Button className={classes.button} href="./resume">
+                    <WhiteTypography variant="h5">
                         Resume
+                    </WhiteTypography>
                     </Button>
                     <Button className={classes.button} href="https://github.com/hamptoam" >
+                    <WhiteTypography variant="h5">
                         Github
+                    </WhiteTypography>
                     </Button>
                     </Grid>
             </Toolbar>
+            </AppBar>
     );    
 }
 
-Navbar.propTypes = {
+Header.propTypes = {
     sections: PropTypes.array,
     title: PropTypes.string,
   };
