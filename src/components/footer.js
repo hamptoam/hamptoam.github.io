@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { Toolbar, Grid, Typography, Link } from '@material-ui/core';
+ 
 
-/* function Copyright() {
+function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -17,14 +16,19 @@ import Link from '@material-ui/core/Link';
     </Typography>
   );
 }
-*/
+
 
 const useStyles = makeStyles((theme) => ({
-  footer: {
-   // backgroundColor: theme.palette.background.paper,
-    //marginTop: theme.spacing(8),
-    //padding: theme.spacing(6, 0),
+  root: {
+    width: '100%',
+    maxWidth: '500',
   
+    },
+  footer: {
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  
+    
+    flexDirection: 'row-reverse',
   },
 }));
 
@@ -33,16 +37,21 @@ export default function Footer(props) {
   const { description, title } = props;
 
   return (
-    <footer className={classes.footer}>
-      <Container maxWidth="auto">
+     
+    
+    <Grid item xs={12} className={classes.footer}>
+ <Toolbar>
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           {description}
         </Typography>
-      </Container>
-    </footer>
+ 
+ 
+    
+    </Toolbar>
+    </Grid>
   );
 }
 

@@ -1,68 +1,60 @@
-import React from "react";
-//import { Link } from "react-router-dom";
-import { Grid, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
+import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
+import { IconButton, Collapse } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
     root: {
-        flexGrow: 1,
-        border: '2px solid white',
-    },
-    grid: {
-        padding: '50px',
-        width: '100%',
-        margin: 'auto',
-    },
-    card: {
-        width: '1400px',
-        height: '400px',
-        backgroundColor: 'black',
-        margin: '0',
-        opacity: '50%',
-        borderRadius: '25px',
-        padding: '50px',
-    },
-    bubble: {
-        width: '250px',
-        height: '250px',
-        borderRadius: '50%',
-        border: '2px solid white',
-        margin: '50px',
-    },
-    media: {
-        borderRadius: '50%',
-        backgroundImage: ("../images/temppicture.jpg"),
-        height: '250px',
-    },
-}));
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+       // textAlign: 'center',
+        height: '100vh',
+        fontFamily: 'Nunito',
 
-export default function Home() {
+    },
+    icon: {
+        color: '#fff',
+        fontSize: '2rem',
+    },
+    colorText: {
+        color:'black',
+    },
+    container: {
+        textAlign: 'center',
+    },
+    title: {
+        color: '#fff',
+        fontSize: '3rem',
+    },
+    goDown: {
+        color:'black',
+        fontSize: '2rem',
+    }
+});
+
+export default function Home(props) {
 
     const classes  = useStyles();
+    const [checked, setChecked] = useState(false);
+    useEffect(() => {
+        setChecked(true);
+            
+        },[])
+
     return (
-   <div style={{width: '100%', margin: 'auto'}}>
-        <Grid container className={classes.grid} justify={'space-around'}>
-            <Grid item>
-                <Card className={classes.bubble} margin={'auto'}>
-                    <CardActionArea>
-                    <CardMedia className={classes.media}
-                            image={require('../images/temppicture.jpg')}
-                        /> 
-                    </CardActionArea>
-                </Card>
-                <Grid>
-                <Card className={classes.card}>
-                </Card>
-            </Grid>
-            </Grid>  
-        </Grid>
-        </div>
+<div className={classes.root}>
+<Collapse in={checked} {...(checked ? {timeout: 1000 } : {})} collapsedHeight={50}>
+<div className={classes.container}>
+    <h1 className={classes.title}>
+        Amelia Hampton<br />
+         <span className={classes.colorText}>Full Stack Web and Software Developer</span>
+    </h1>
+    <IconButton>
+        <ExpandMoreIcon className={classes.goDown} />
+    </IconButton>
+    </div>
+    </Collapse>
+    </div>
     )
 };
-
-Home.propTypes = {
-    children: PropTypes.element.isRequired
-};
-
-

@@ -14,7 +14,7 @@ class App extends Component {
 
     render(props) {
         return (
-            <div class="skeleton">           
+            <div className="skeleton">           
                 <Layout>
                 <Main />
                 </Layout>

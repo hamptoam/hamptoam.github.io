@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Button, Toolbar, Grid, Link, Typography } from '@material-ui/core';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-//import { shadows } from '@material-ui/system';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,53 +9,51 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '500',
     },
     appbar: {
-       // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        justifyContent: 'flex-end',
-        display: 'flex',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
         backgroundColor: 'black',
-        opacity: "50%",
+        opacity: "80%",
+        flexDirection: 'row-reverse',
     }, 
+    typography: {
+        color: 'white',
+        variant: 'h3',
+        fontFamily: 'Nunito',
+
+    }
 }));
 
 export default function Header(props) {
-
-    const WhiteTypography = withStyles({
-        root: {
-          color: "#FFFFFF"
-        }}
-        )(Typography);
-        
+    
     const classes  = useStyles();
-    const {sections, title} = props;
 
-    return (
+        return (
         <AppBar position="fixed" className={classes.appbar}>
         <Toolbar>
             <Grid item xs={12}>
                     <Button className={classes.button} href="./home">
-                        <WhiteTypography variant="h5">
+                        <Typography className={classes.typography}>
                         Home
-                        </WhiteTypography>
+                        </Typography>
                     </Button>
                     <Button className={classes.button} href="./aboutme">
-                    <WhiteTypography variant="h5">
+                    <Typography className={classes.typography}>
                         About Me
-                    </WhiteTypography>
+                    </Typography>
                     </Button>
                     <Button className={classes.button} href="./projects">
-                    <WhiteTypography variant="h5">
+                    <Typography className={classes.typography}>
                         Projects
-                    </WhiteTypography>
+                    </Typography>
                     </Button>
                     <Button className={classes.button} href="./resume">
-                    <WhiteTypography variant="h5">
+                    <Typography className={classes.typography}>
                         Resume
-                    </WhiteTypography>
+                    </Typography>
                     </Button>
                     <Button className={classes.button} href="https://github.com/hamptoam" >
-                    <WhiteTypography variant="h5">
+                    <Typography className={classes.typography}>
                         Github
-                    </WhiteTypography>
+                    </Typography>
                     </Button>
                     </Grid>
             </Toolbar>
@@ -65,6 +62,5 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-    sections: PropTypes.array,
-    title: PropTypes.string,
-  };
+    children: PropTypes.element.isRequired
+};
