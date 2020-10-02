@@ -5,14 +5,18 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-    width: '100%',
+    width: 'auto',
     maxWidth: '500',
+    margin: 'auto',
+  display: 'flex',
     },
     appbar: {
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
         backgroundColor: 'black',
         opacity: "80%",
         flexDirection: 'row-reverse',
+        alignContent: 'center',
+        margin: 'auto',
     }, 
     typography: {
         color: 'white',
@@ -27,7 +31,7 @@ export default function Header(props) {
     const classes  = useStyles();
 
         return (
-        <AppBar position="fixed" className={classes.appbar}>
+        <AppBar position="static" className={classes.appbar}>
         <Toolbar>
             <Grid item xs={12}>
                     <Button className={classes.button} href="./home">

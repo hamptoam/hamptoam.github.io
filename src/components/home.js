@@ -7,40 +7,40 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
     root: {
+        spacing: 0,
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-       // textAlign: 'center',
+        justifyContent: 'flex',
         height: '100vh',
         fontFamily: 'Nunito',
         flexGrow: 1,
-        border: '2px solid white',
-    
-
+        alignItems: 'center',
+        margin: 'auto',
     },
     grid: {
     padding: '50px',
     width: '100%',
-    margin: 'auto',
     },
     media: {
         borderRadius: '50%',
-        backgroundImage: ("../images/temppicture.jpg"),
+        //backgroundImage: ("../images/temppicture.jpg"),
         height: '250px',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
     bubble: {
         width: '250px',
         height: '250px',
         borderRadius: '50%',
-        border: '2px solid white',
+        display: 'flex',
         margin: 'auto',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        border: 'pink',
+       
     },
     icon: {
         fontSize: '2rem',
+        color: 'black',
     },
     button: {
-        color: 'white',
+        color: 'black',
         fontFamily: 'Nunito',
     },
     colorText: {
@@ -49,15 +49,18 @@ const useStyles = makeStyles({
     container: {
         textAlign: 'center',
         borderRadius: '25px',
-        padding: '12px',
+        height: 'auto',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        backgroundColor: "white",
     },
     title: {
-        color: '#fff',
+        color: 'black',
         fontSize: '3rem',
+        padding: '10px',
       
     },
     goDown: {
-        color:'white',
+        color:'black',
         fontSize: '2rem',
     },
     floating: {
@@ -84,16 +87,13 @@ export default function Home(props) {
         },[])
 
     return (
-<div className={classes.root}>
+<Grid className={classes.root}>
         <Container className={classes.grid}
         >
         <StyleRoot>
             <Grid style={classes.bounce}>
                 <Card className={classes.bubble} margin={'auto'}>
                     <CardActionArea>
-                    <CardMedia className={classes.media}
-                            image={require('../images/temppicture.jpg')}
-                        /> 
                     </CardActionArea>
                 </Card>
   
@@ -105,6 +105,7 @@ export default function Home(props) {
 <div className={classes.container}>
     <h1 className={classes.title}>
         Amelia Hampton<br />
+        <br/>
          <span className={classes.colorText}>Full Stack Web and Software Developer</span>
     </h1>
     <IconButton>
@@ -120,7 +121,7 @@ export default function Home(props) {
     </StyleRoot>
  
     </Container>  
-    </div>
+    </Grid>
     
     )
 };
