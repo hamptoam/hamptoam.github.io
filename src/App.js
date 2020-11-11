@@ -1,26 +1,35 @@
-import React, { Component } from "react";
-import './App.css';
-import Main from './components/main.js';
-import Layout from './components/layout.js';
-//import Navbar from './components/nav.js';
-//import Footer from './components/footer.js';
-//import {makeStyles} from '@material-ui/styles';
-//import { PropTypes } from 'prop-types';
-//import { Grid } from '@material-ui/core';
-//import CssBaseline from '@material-ui/core/ScopedCssBaseline';
+import React from "react";
+//import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, CssBaseline } from '@material-ui/core';
+import Header from './components/header';
+import Footer from './components/footer';
+import Main from './components/main';
+import background from './components/dfCdbng.jpg';
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        minHeight: '100vh',
+        backgroundSize: 'cover',
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: 'no-repeat',
+    },
+}));
 
-class App extends Component {
-
-    render(props) {
+export default function App() {
+    {
+        const classes = useStyles();
         return (
-            <div className="skeleton">           
-                <Layout>
-                <Main />
-                </Layout>
-            </div >                   
+            <React.Fragment>
+                <CssBaseline />
+                <Grid className={classes.root}>
+                    <Header />
+                    <Main />
+                    <Footer />
+                </Grid>
+            </React.Fragment>
         );
     }
 }
-export default App;
+
 
