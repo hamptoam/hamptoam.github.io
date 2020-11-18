@@ -79,7 +79,7 @@ export default function Home(props) {
             <Container className={classes.grid}
             >
                 <StyleRoot>
-                    <Grid style={classes.bounce}>
+                    <Grid item={classes.bounce}>
                         <Card className={classes.bubble} margin={'auto'}>
                             <CardActionArea>
                             </CardActionArea>
@@ -92,13 +92,6 @@ export default function Home(props) {
                                     <br />
                                     <span className={classes.colorText}>Full Stack Web and Software Developer</span>
                                 </h1>
-                                <IconButton>
-                                    <h3 className={classes.button}>
-                                        Follow Me
-
-         </h3>
-                                    <ExpandMoreIcon className={classes.goDown} />
-                                </IconButton>
                             </div>
                         </Collapse>
                     </Grid>
