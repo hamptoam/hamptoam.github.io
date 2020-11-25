@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Collapse, Container, Grid, Card, Typography } from '@material-ui/core';
+import { Collapse, Container, Grid, Paper, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         margin: 'auto',
     },
-    container: {
+    paper: {
         borderRadius: '25px',
         height: 'auto',
         margin: 'auto',
@@ -46,11 +46,11 @@ export default function AboutMe(props) {
         <Grid className={classes.root}>
             <Container className={classes.container}>
                         <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})} collapsedHeight={50}>
-                            <Card className={classes.card}>
+                            <Paper className={classes.paper}>
                                 <Typography variant="body1" display="block" className={classes.paragraph}>       
                              
                                 </Typography>
-                            </Card>
+                            </Paper>
                         </Collapse>
             </Container>
         </Grid>
