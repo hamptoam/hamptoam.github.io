@@ -1,6 +1,6 @@
 {
-  "homepage": "http://hamptoam.github.io/",
-  "name": "hamptoam.github.io",
+  "homepage": "http://hamptoam.github.io/home",
+  "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
