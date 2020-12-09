@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         variant: 'h3',
         fontFamily: 'Nunito',
-
     }
 }));
 

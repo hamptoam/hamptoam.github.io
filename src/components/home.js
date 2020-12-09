@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { IconButton, Collapse, Container, Grid, Card, CardActionArea, CardMedia } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { StyleRoot } from 'radium';
 import PropTypes from 'prop-types';
 
