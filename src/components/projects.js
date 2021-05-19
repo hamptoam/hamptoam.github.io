@@ -13,12 +13,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         alignItems: 'center',
         margin: 'auto',
- 
-    },
-    cardGrid: {
         paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(2),
-     
+
     },
     card: {
         textAlign: 'center',
@@ -46,12 +43,9 @@ const cards = [{title: "BetterComm", desc: "Web app designed to make phone calls
 export default function Projects(props) {
     const classes = useStyles();
     return (
-        <Grid className = {classes.root}>
-            <Typography classname={classes.title}>
-                <h1>Projects</h1>
-            </Typography> 
-                <Container className={classes.cardGrid} maxWidth="md">
-                    <Grid container spacing={8}>
+        <div className = {classes.root}>
+                <Container maxWidth="md">
+                    <Grid container spacing={2}>
                         {cards.map((card) => (
                             <Grid item key={card} xs={12} sm={6} md={4}>
                                 <Card className={classes.card}>
@@ -73,7 +67,7 @@ export default function Projects(props) {
                         ))}
                     </Grid>
                 </Container>
-        </Grid>
+        </div>
     );
 }
 //make this a carousel? 
